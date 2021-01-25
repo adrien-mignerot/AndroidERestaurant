@@ -3,6 +3,7 @@ package fr.isen.mignerot.androiderestaurant
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import fr.isen.mignerot.androiderestaurant.databinding.ActivityHomeBinding
 
@@ -39,10 +40,15 @@ class HomeActivity : AppCompatActivity() {
         //mainTitle.typeface = ResourcesCompact.getFont(this, R.font.entsani)
         //mainTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50.toFloat())
 
+    }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(TAG,"destroyed")
     }
 
     companion object {
+        const val TAG = "HomeActivity"
         const val CATEGORY = "category"
     }
 }
