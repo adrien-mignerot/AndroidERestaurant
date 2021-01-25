@@ -8,4 +8,10 @@
     <string name="starter_title">Nos entrées</string>
     <string name="main_course_title">Nos plats</string>
     <string name="dessert_title">Nos déserts</string>
+    <string name="dish_pic_description">Dish picture</string>
+    <string-array name="dish_name_array">
+        <item>Blanc de volaille aux gambas</item>
+        <item>Rognon de voeau à la bourguignonne</item>
+        <item>Couscous Royal</item>
+    </string-array>
 </resources>
