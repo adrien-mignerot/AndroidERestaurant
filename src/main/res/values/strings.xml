@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AndroidERestaurant</string>
+    <string name="main_welcome">Bienvenue chez</string>
+    <string name="main_title">La Guinguette</string>
+    <string name="starter_button">Entrées</string>
+    <string name="main_course_button">Plats</string>
+    <string name="dessert_button">Déserts</string>
+</resources>
