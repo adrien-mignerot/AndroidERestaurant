@@ -18,6 +18,15 @@ class CategoryActivity : AppCompatActivity() {
         binding.categoryTitle.text = intent.getStringExtra(HomeActivity.CATEGORY)
 
         binding.listCategory.layoutManager = LinearLayoutManager(this)
+
+        /*when (HomeActivity.CATEGORY) {
+            1 -> print("x == 1")
+            2 -> print("x == 2")
+            else -> { // Note the block
+                print("x is neither 1 nor 2")
+            }
+        }*/
+
         binding.listCategory.adapter = CategoryListAdapter(resources.getStringArray(R.array.dish_name_array).toList())
     }
 }
