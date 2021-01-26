@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import fr.isen.mignerot.androiderestaurant.databinding.CategoryCellBinding
 
-class CategoryListAdapter(private val categories: List<String>): RecyclerView.Adapter<CategoryListAdapter.CategoryHolder>() {
+class CategoryListAdapter(private val categories: List<String>, private val categoriesClickListener: (String) -> Unit): RecyclerView.Adapter<CategoryListAdapter.CategoryHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -17,15 +17,15 @@ class CategoryListAdapter(private val categories: List<String>): RecyclerView.Ad
 
     override fun onBindViewHolder(holder: CategoryListAdapter.CategoryHolder, position: Int) {
         holder.title.text = categories[position]
-        /*holder.layout.setOnClickListener {
+        holder.layout.setOnClickListener {
             categoriesClickListener.invoke(categories[position])
-        }*/
+        }
     }
 
     override fun getItemCount(): Int = categories.size
 
     class CategoryHolder(binding: CategoryCellBinding) : RecyclerView.ViewHolder(binding.root) {
         val title = binding.dishName
-        //val layout = binding.root
+        val layout = binding.root
     }
 }

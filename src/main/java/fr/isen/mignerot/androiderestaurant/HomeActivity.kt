@@ -37,6 +37,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         //mainTitle.typeface = ResourcesCompact.getFont(this, R.font.entsani)
         //mainTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50.toFloat())
 
