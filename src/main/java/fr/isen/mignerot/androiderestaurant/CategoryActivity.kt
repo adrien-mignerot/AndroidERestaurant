@@ -45,7 +45,7 @@ class CategoryActivity : AppCompatActivity() {
         val stringRequest = JsonObjectRequest(
                 Request.Method.POST, url, jsonData, { response ->
             val menu = GsonBuilder().create().fromJson(response.toString(), DataResult::class.java)
-            menu.data.firstOrNull { it.name == "test" }?.dishes?.let {
+            menu.data.firstOrNull { it.name == category }?.dishes?.let {
                 displayDishes(it)
             } ?: run {
                 binding.categoryLoading.visibility = View.GONE
