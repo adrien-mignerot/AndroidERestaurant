@@ -18,17 +18,23 @@ class DetailActivity : AppCompatActivity() {
         binding.detailTitle.text = dish.title
         binding.detailIngredients.text = dish.ingredients.joinToString(", ") { it.name }
 
-        val image = dish.getFirstPicture()
-        if(image != null && image.isNotEmpty()){
-            Picasso.get()
-                    .load(image)
-                    .into(binding.detailPicture)
-        } else {
-            Picasso.get()
-                    .load(R.drawable.not_found)
-                    .into(binding.detailPicture)
+        binding.detailButton.text = "Total ".toUpperCase() + dish.getFormattedPrice()
+
+        dish.getAllPictures()?.let {
+            binding.detailViewPager.adapter = DetailViewAdapter(this, it)
         }
 
-        binding.detailButton.text = "Total ".toUpperCase() + dish.getFormattedPrice()
+        if(dish.getAllPictures() == null){
+            val image = dish.getFirstPicture()
+            if(image != null && image.isNotEmpty()){
+                Picasso.get()
+                        .load(image)
+                        .into(binding.detailPicture)
+            } else {
+                Picasso.get()
+                        .load(R.drawable.not_found)
+                        .into(binding.detailPicture)
+            }
+        }
     }
 }
