@@ -3,10 +3,16 @@ package fr.isen.mignerot.androiderestaurant
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.volley.Request
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import com.google.gson.GsonBuilder
 import fr.isen.mignerot.androiderestaurant.databinding.ActivityCategoryBinding
-import fr.isen.mignerot.androiderestaurant.databinding.ActivityHomeBinding
+import fr.isen.mignerot.androiderestaurant.model.DataResult
+import fr.isen.mignerot.androiderestaurant.model.Dish
 import org.json.JSONObject
 
 private lateinit var binding: ActivityCategoryBinding
@@ -19,15 +25,18 @@ class CategoryActivity : AppCompatActivity() {
 
         binding.categoryTitle.text = intent.getStringExtra(HomeActivity.CATEGORY)
 
-        binding.listCategory.layoutManager = LinearLayoutManager(this)
+        binding.categoryList.layoutManager = LinearLayoutManager(this)
 
-        binding.listCategory.adapter = CategoryListAdapter(resources.getStringArray(R.array.dish_name_array).toList()) {
+        loadDishesFromCategory(intent.getStringExtra("category") ?: "")
+
+        /*binding.categoryList.adapter = CategoryListAdapter(resources.getStringArray(R.array.dish_name_array).toList()) {
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("category", it)
             startActivity(intent)
-        }
+        }*/
     }
-    /*private fun loadDishesFromCategory(category: String) {
+
+    private fun loadDishesFromCategory(category: String) {
         val url = "http://test.api.catering.bluecodegames.com/" + "menu"
 
         val jsonData = JSONObject()
@@ -35,29 +44,30 @@ class CategoryActivity : AppCompatActivity() {
 
         val stringRequest = JsonObjectRequest(
                 Request.Method.POST, url, jsonData, { response ->
-                    val menu = GsonBuilder().create().fromJson(response.toString(), MenuResult::class.java)
-            menu.data.firstOrNull { it.name == category }?.dishes?.let {
+            val menu = GsonBuilder().create().fromJson(response.toString(), DataResult::class.java)
+            menu.data.firstOrNull { it.name == "test" }?.dishes?.let {
                 displayDishes(it)
             } ?: run {
                 binding.categoryLoading.visibility = View.GONE
-                binding.categoryErrorMessage.text = "Aucun plat proposé à la carte du restaurant pour le moment"
+                binding.categoryErrorMessage.text = "Aucun(e) ${category.toLowerCase()} proposé(e)s pour le moment"
             }
         },
                 {
-                    Log.d("CategoryActivity", "That didn't work ! ${it}")
+                    Log.d("CategoryActivity", "Erreur Volley : $it")
                     binding.categoryLoading.visibility = View.GONE
-                    binding.categoryErrorMessage.text = "Impossible de récupérer la liste des {category}. Veuillez réessayez..."
+                    binding.categoryErrorMessage.text = "Impossible de récupérer la liste des ${category.toLowerCase()}."
                 })
+        Volley.newRequestQueue(this).add(stringRequest)
     }
 
     private fun displayDishes(dishes: List<Dish>) {
         binding.categoryLoading.visibility = View.GONE
         binding.categoryList.layoutManager = LinearLayoutManager(this)
-        binding.categoryList.adapter = CategoryAdapter(dishes) {
+        binding.categoryList.adapter = CategoryListAdapter(dishes) {
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("Dish", it)
             startActivity(intent)
         }
-    }*/
+    }
 
 }

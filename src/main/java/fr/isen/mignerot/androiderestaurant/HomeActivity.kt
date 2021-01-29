@@ -19,21 +19,21 @@ class HomeActivity : AppCompatActivity() {
         binding.starterButton.setOnClickListener {
             //Toast.makeText(applicationContext, "Click sur entrées !", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, CategoryActivity::class.java)
-            intent.putExtra(CATEGORY, getString(R.string.starter_title))
+            intent.putExtra(CATEGORY, getString(R.string.starter_button))
             startActivity(intent)
         }
 
         binding.mainCourseButton.setOnClickListener {
             //Toast.makeText(applicationContext, "Click sur plats !", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, CategoryActivity::class.java)
-            intent.putExtra(CATEGORY, getString(R.string.main_course_title))
+            intent.putExtra(CATEGORY, getString(R.string.main_course_button))
             startActivity(intent)
         }
 
         binding.dessertButton.setOnClickListener {
             //Toast.makeText(applicationContext, "Click sur déserts !", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, CategoryActivity::class.java)
-            intent.putExtra(CATEGORY, getString(R.string.dessert_title))
+            intent.putExtra(CATEGORY, getString(R.string.dessert_button))
             startActivity(intent)
         }
 
