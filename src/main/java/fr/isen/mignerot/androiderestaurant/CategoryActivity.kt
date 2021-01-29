@@ -65,9 +65,12 @@ class CategoryActivity : AppCompatActivity() {
         binding.categoryList.layoutManager = LinearLayoutManager(this)
         binding.categoryList.adapter = CategoryListAdapter(dishes) {
             val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("Dish", it)
+            intent.putExtra(DISH, it)
             startActivity(intent)
         }
     }
 
+    companion object {
+        const val DISH = "Dish"
+    }
 }
