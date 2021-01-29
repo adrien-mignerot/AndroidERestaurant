@@ -12,7 +12,7 @@ import fr.isen.mignerot.androiderestaurant.model.Dish
 private lateinit var binding: ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
-    private var compteur = 1
+    private var quantity = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
@@ -24,7 +24,7 @@ class DetailActivity : AppCompatActivity() {
 
         binding.detailRemove.visibility = View.GONE
 
-        val total = dish.getPrice().toFloat()*compteur
+        val total = dish.getPrice().toFloat()*quantity
 
         binding.detailButton.text = "Total ".toUpperCase() + total.toString() + " €"
 
@@ -46,29 +46,29 @@ class DetailActivity : AppCompatActivity() {
         }
 
         binding.detailAdd.setOnClickListener {
-            if(compteur < 10){
-                compteur++
-                if(compteur > 1)
+            if(quantity < 10){
+                quantity++
+                if(quantity > 1)
                     binding.detailRemove.visibility = View.VISIBLE
-                binding.detailNumber.text = compteur.toString()
+                binding.detailNumber.text = quantity.toString()
             } else {
                 Toast.makeText(applicationContext, "Vous pouvez commander au maximum 10 ${dish.title}.", Toast.LENGTH_LONG).show()
                 binding.detailAdd.visibility = View.GONE
             }
-            val total = dish.getPrice().toFloat()*compteur
+            val total = dish.getPrice().toFloat()*quantity
             binding.detailButton.text = "Total ".toUpperCase() + total.toString() + " €"
         }
 
         binding.detailRemove.setOnClickListener {
-            if(compteur > 1){
-                compteur--
-                if(compteur == 1)
+            if(quantity > 1){
+                quantity--
+                if(quantity == 1)
                     binding.detailRemove.visibility = View.GONE
-                if(compteur < 10)
+                if(quantity < 10)
                     binding.detailAdd.visibility = View.VISIBLE
-                binding.detailNumber.text = compteur.toString()
+                binding.detailNumber.text = quantity.toString()
             }
-            val total = dish.getPrice().toFloat()*compteur
+            val total = dish.getPrice().toFloat()*quantity
             binding.detailButton.text = "Total ".toUpperCase() + total.toString() + " €"
         }
     }
