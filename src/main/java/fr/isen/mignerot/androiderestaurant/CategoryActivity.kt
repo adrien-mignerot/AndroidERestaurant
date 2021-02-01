@@ -17,7 +17,7 @@ import org.json.JSONObject
 
 private lateinit var binding: ActivityCategoryBinding
 
-class CategoryActivity : AppCompatActivity() {
+class CategoryActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCategoryBinding.inflate(layoutInflater)

@@ -15,7 +15,7 @@ import java.io.File
 
 private lateinit var binding: ActivityDetailBinding
 
-class DetailActivity : AppCompatActivity() {
+class DetailActivity : BaseActivity() {
     private var quantity = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -114,6 +114,7 @@ class DetailActivity : AppCompatActivity() {
 
         val sharedPreferences = getSharedPreferences(APP_PREFS, MODE_PRIVATE)
         sharedPreferences.edit().putInt(BASKET_COUNT, count).apply()
+        invalidateOptionsMenu()
     }
 
     companion object {

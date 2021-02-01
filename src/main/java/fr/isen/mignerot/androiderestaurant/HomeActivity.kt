@@ -9,7 +9,7 @@ import fr.isen.mignerot.androiderestaurant.databinding.ActivityHomeBinding
 
 private lateinit var binding: ActivityHomeBinding
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
