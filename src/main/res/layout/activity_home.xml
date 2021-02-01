@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/main_welcome"
+        android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,11 +21,14 @@
         android:id="@+id/mainTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:fontFamily="@font/entsani"
         android:text="@string/main_title"
+        android:textColor="@color/black"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.40"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainWelcome" />
+        app:layout_constraintTop_toBottomOf="@+id/mainToquePic" />
 
     <Button
         android:id="@+id/starterButton"
@@ -58,5 +62,28 @@
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainCourseButton" />
+
+    <ImageView
+        android:id="@+id/mainToquePic"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/mainTitle"
+        app:layout_constraintEnd_toEndOf="@+id/mainTitle"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@+id/mainTitle"
+        app:layout_constraintTop_toBottomOf="@+id/mainWelcome"
+        app:srcCompat="@drawable/toque" />
+
+    <ImageView
+        android:id="@+id/mainHandPic"
+        android:layout_width="60dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mainTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/mainTitle"
+        app:layout_constraintTop_toTopOf="@+id/mainTitle"
+        app:srcCompat="@drawable/hand" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

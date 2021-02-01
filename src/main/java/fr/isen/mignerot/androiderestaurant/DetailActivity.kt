@@ -1,13 +1,17 @@
 package fr.isen.mignerot.androiderestaurant
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.squareup.picasso.Picasso
 import fr.isen.mignerot.androiderestaurant.databinding.ActivityDetailBinding
 import fr.isen.mignerot.androiderestaurant.model.Dish
+import fr.isen.mignerot.androiderestaurant.model.ItemBasket
+import java.io.File
 
 private lateinit var binding: ActivityDetailBinding
 
@@ -71,5 +75,49 @@ class DetailActivity : AppCompatActivity() {
             val total = dish.getPrice().toFloat()*quantity
             binding.detailButton.text = "Total ".toUpperCase() + total.toString() + " €"
         }
+
+        binding.detailButton.setOnClickListener {
+            if(dish != null)
+                saveInBasket(it, quantity, dish)
+        }
+    }
+
+    private fun saveInBasket(view: View, quantity: Int, dish: Dish) {
+        val file = File(cacheDir.absolutePath + "UserCart.Json")
+
+        if(file.exists()){
+            val basket = GsonBuilder().create().fromJson(file.readText(), Basket::class.java)
+
+            basket.items.firstOrNull { it.dish == dish }?.let {
+                it.quantity += quantity
+            } ?: run {
+                basket.items.add(ItemBasket(quantity, dish))
+            }
+            saveInMemory(basket, file)
+        } else {
+            val basket = Basket(mutableListOf(ItemBasket(quantity, dish)))
+            saveInMemory(basket, file)
+        }
+        if(quantity == 1)
+            Snackbar.make( view, "Un(e) ${dish.title} ajouté(e) au panier !", Snackbar.LENGTH_SHORT).show()
+        else
+            Snackbar.make( view, "$quantity ${dish.title} ajouté(e)s au panier !", Snackbar.LENGTH_SHORT).show()
+    }
+
+    private fun saveInMemory(basket: Basket, file: File) {
+        saveDishCount(basket)
+        file.writeText(GsonBuilder().create().toJson(basket))
+    }
+
+    private fun saveDishCount(basket: Basket) {
+        val count = basket.items.sumOf { it.quantity }
+
+        val sharedPreferences = getSharedPreferences(APP_PREFS, MODE_PRIVATE)
+        sharedPreferences.edit().putInt(BASKET_COUNT, count).apply()
+    }
+
+    companion object {
+        const val APP_PREFS = "app_prefs"
+        const val BASKET_COUNT = "basket_count"
     }
 }
