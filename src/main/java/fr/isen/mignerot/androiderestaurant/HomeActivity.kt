@@ -43,6 +43,11 @@ class HomeActivity : BaseActivity() {
 
     }
 
+    override fun onResume() {
+        invalidateOptionsMenu()
+        super.onResume()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         Log.i(TAG,"destroyed")
