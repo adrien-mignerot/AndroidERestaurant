@@ -16,6 +16,15 @@
     <string name="multiplySymbol">×</string>
     <string name="removeButton">Bouton pour supprimer un plat</string>
     <string name="basketButton">Passer au paiement</string>
+    <string name="register">Inscription</string>
+    <string name="firstName">Prénom</string>
+    <string name="lastName">Nom</string>
+    <string name="email">Adresse email</string>
+    <string name="password">Mot de passe</string>
+    <string name="Address">Adresse postale</string>
+    <string name="alreadyRegister">Vous possédez déjà un compte ?</string>
+    <string name="alreadyRegisterButton">► Identifiez-vous</string>
+    <string name="fillAllInput">Veuillez remplir tous les champs.</string>
     <string-array name="dish_name_array">
         <item>Blanc de volaille aux gambas</item>
         <item>Rognon de voeau à la bourguignonne</item>

@@ -17,6 +17,10 @@ class BasketActivity : BaseActivity() {
         binding = ActivityBasketBinding.inflate(layoutInflater)
         setContentView(binding.root)
         readFile()
+
+        binding.basketButton.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
     }
 
     private fun readFile() {
