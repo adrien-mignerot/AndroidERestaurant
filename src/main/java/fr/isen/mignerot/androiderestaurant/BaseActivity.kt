@@ -1,9 +1,9 @@
 package fr.isen.mignerot.androiderestaurant
 
-import android.content.Context
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.view.Menu
-import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -26,7 +26,19 @@ open class BaseActivity: AppCompatActivity() {
         }
 
         menuView?.setOnClickListener{
-            startActivity(Intent(this, BasketActivity::class.java))
+            if(quantity > 0)
+                startActivity(Intent(this, BasketActivity::class.java))
+            else {
+                val dialogBuilder = AlertDialog.Builder(this)
+                dialogBuilder.setMessage("Votre panier est vide...")
+                        .setCancelable(false)
+                        .setPositiveButton("Ok", DialogInterface.OnClickListener {
+                            dialog, _ -> dialog.cancel()
+                        })
+                val alert = dialogBuilder.create()
+                alert.setTitle("Oups !")
+                alert.show()
+            }
         }
 
         return super.onCreateOptionsMenu(menu)

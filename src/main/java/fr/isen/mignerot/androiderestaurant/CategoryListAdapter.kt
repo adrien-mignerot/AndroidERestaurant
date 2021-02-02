@@ -22,12 +22,12 @@ class CategoryListAdapter(private val categories: List<Dish>, private val catego
         if (categories[position].getFirstPicture() != null) {
             picasso
                     .load(categories[position].getFirstPicture())
-                    .resize(250, 250)
+                    //.resize(250, 250)
                     .into(holder.picture)
         } else {
             picasso
                     .load(R.drawable.not_found)
-                    .resize(250, 250)
+                    //.resize(250, 250)
                     .into(holder.picture)
         }
         holder.layout.setOnClickListener {

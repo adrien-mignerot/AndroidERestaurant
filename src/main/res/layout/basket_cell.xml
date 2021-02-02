@@ -49,12 +49,11 @@
                 android:id="@+id/dishPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/priceExample"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/dishPicture"
+                app:layout_constraintStart_toEndOf="@id/multiply"
                 app:layout_constraintTop_toBottomOf="@+id/dishName" />
 
             <ImageView
@@ -67,6 +66,43 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/arrow" />
+
+            <TextView
+                android:id="@+id/nbItemsBasket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:text="99"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/removePicture"
+                app:layout_constraintTop_toBottomOf="@id/dishName" />
+
+            <TextView
+                android:id="@+id/multiply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/multiplySymbol"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/dishPrice"
+                app:layout_constraintStart_toEndOf="@id/nbItemsBasket"
+                app:layout_constraintTop_toBottomOf="@+id/dishName" />
+
+            <ImageView
+                android:id="@+id/removePicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:contentDescription="@string/removeButton"
+                app:layout_constraintBottom_toBottomOf="@+id/nbItemsBasket"
+                app:layout_constraintStart_toEndOf="@+id/dishPicture"
+                app:layout_constraintTop_toTopOf="@+id/nbItemsBasket"
+                app:srcCompat="@drawable/ic_trash_solid"
+                tools:srcCompat="@drawable/ic_trash_solid" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

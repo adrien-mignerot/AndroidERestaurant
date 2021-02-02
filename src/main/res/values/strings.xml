@@ -9,6 +9,13 @@
     <string name="main_course_title">Nos plats</string>
     <string name="dessert_title">Nos déserts</string>
     <string name="dish_pic_description">Dish picture</string>
+    <string name="dishName">Titre du plat</string>
+    <string name="priceExample">10.90 €</string>
+    <string name="arrowDescriptor">Fleche de navigation</string>
+    <string name="basketTitle">Votre panier</string>
+    <string name="multiplySymbol">×</string>
+    <string name="removeButton">Bouton pour supprimer un plat</string>
+    <string name="basketButton">Passer au paiement</string>
     <string-array name="dish_name_array">
         <item>Blanc de volaille aux gambas</item>
         <item>Rognon de voeau à la bourguignonne</item>
