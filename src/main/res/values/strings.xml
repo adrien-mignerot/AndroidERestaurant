@@ -25,6 +25,13 @@
     <string name="alreadyRegister">Vous possédez déjà un compte ?</string>
     <string name="alreadyRegisterButton">► Identifiez-vous</string>
     <string name="fillAllInput">Veuillez remplir tous les champs.</string>
+    <string name="notSamePassword">Les mots de passe ne correspondent pas.</string>
+    <string name="ivalidLogin">Identifiants invalides.</string>
+    <string name="connected">Vous êtes identifié !</string>
+    <string name="login">Connexion</string>
+    <string name="alreadyLogin">Pas encore inscrit ?</string>
+    <string name="alreadyLoginButton">► Créer votre compte</string>
+    <string name="passwordConfirm">Confirmation du mot de passe</string>
     <string-array name="dish_name_array">
         <item>Blanc de volaille aux gambas</item>
         <item>Rognon de voeau à la bourguignonne</item>

@@ -77,7 +77,6 @@ class DetailActivity : BaseActivity() {
         }
 
         binding.detailButton.setOnClickListener {
-            if(dish != null)
                 saveInBasket(it, quantity, dish)
         }
     }

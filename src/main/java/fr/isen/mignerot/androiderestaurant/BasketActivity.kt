@@ -3,10 +3,16 @@ package fr.isen.mignerot.androiderestaurant
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.volley.Request
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import fr.isen.mignerot.androiderestaurant.databinding.ActivityBasketBinding
+import org.json.JSONObject
 import java.io.File
 
 private lateinit var binding: ActivityBasketBinding
@@ -19,13 +25,18 @@ class BasketActivity : BaseActivity() {
         readFile()
 
         binding.basketButton.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            if( getUserId() > -1) {
+                Log.i(TAG, "command item with uid ${getUserId()}")
+            } else {
+                val intent = Intent(this, RegisterActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
     private fun readFile() {
         val gson = GsonBuilder().setPrettyPrinting().create()
-        val file = File(cacheDir.absolutePath + "UserCart.Json")
+        val file = File(cacheDir.absolutePath + JSON_FILE)
         if (file.exists()) {
             val basket = gson.fromJson(file.readText(), Basket::class.java)
             val basketRecycler = binding.basketList
@@ -38,8 +49,14 @@ class BasketActivity : BaseActivity() {
             basketRecycler.layoutManager = LinearLayoutManager(this)
         }
     }
+
+    private fun getUserId(): Int {
+        val sharedPreferences = getSharedPreferences(DetailActivity.APP_PREFS, MODE_PRIVATE)
+        return sharedPreferences.getInt(ID_CLIENT, -1)
+    }
+
     private fun resetBasket(basket: Basket) {
-        val file = File(cacheDir.absolutePath + "UserCart.Json")
+        val file = File(cacheDir.absolutePath + JSON_FILE)
         saveInMemory(basket, file)
     }
 
@@ -57,7 +74,10 @@ class BasketActivity : BaseActivity() {
     }
 
     companion object {
+        const val TAG = "BasketActivity"
+        const val JSON_FILE = "UserCart.Json"
         const val APP_PREFS = "app_prefs"
+        const val ID_CLIENT = "id_client"
         const val BASKET_COUNT = "basket_count"
     }
 }
