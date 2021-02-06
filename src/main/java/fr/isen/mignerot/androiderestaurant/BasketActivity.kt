@@ -12,6 +12,7 @@ import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import fr.isen.mignerot.androiderestaurant.databinding.ActivityBasketBinding
+import fr.isen.mignerot.androiderestaurant.model.OrderResponse
 import org.json.JSONObject
 import java.io.File
 
@@ -27,6 +28,9 @@ class BasketActivity : BaseActivity() {
         binding.basketButton.setOnClickListener {
             if( getUserId() > -1) {
                 Log.i(TAG, "command item with uid ${getUserId()}")
+                finish()
+                val intent = Intent(this, OrderResultActivity::class.java)
+                startActivity(intent)
             } else {
                 val intent = Intent(this, RegisterActivity::class.java)
                 startActivity(intent)
