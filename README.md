@@ -21,12 +21,11 @@ L'application vous permet de :
 
 ## Captures d'écran
 
-[<img src="./screenshot/1.png" align="left" width="200" hspace="10" vspace="10">](/screenshot/1.png)
-[<img src="./screenshot/2.png" align="center" width="200" hspace="10" vspace="10">](/screenshot/2.png)
-[<img src="./screenshot/3.png" align="right" width="200" hspace="10" vspace="10">](/screenshot/3.png)
-[<img src="./screenshot/4.png" align="left" width="200" hspace="10" vspace="10">](/screenshot/4.png)
-[<img src="./screenshot/5.png" align="center" width="200" hspace="10" vspace="10">](/screenshot/5.png)
-[<img src="./screenshot/6.png" align="right" width="200" hspace="10" vspace="10">](/screenshot/6.png)
-[<img src="./screenshot/7.png" align="left" width="200" hspace="10" vspace="10">](/screenshot/7.png)
-[<img src="./screenshot/8.png" align="center" width="200" hspace="10" vspace="10">](/screenshot/8.png)
+[<img src="./screenshot/1.png" width="200" hspace="10" vspace="10">](/screenshot/1.png)
+[<img src="./screenshot/2.png" width="200" hspace="10" vspace="10">](/screenshot/2.png)
+[<img src="./screenshot/3.png" width="200" hspace="10" vspace="10">](/screenshot/3.png)
+[<img src="./screenshot/4.png" width="200" hspace="10" vspace="10">](/screenshot/4.png)
+[<img src="./screenshot/5.png" width="200" hspace="10" vspace="10">](/screenshot/5.png)
+[<img src="./screenshot/6.png" width="200" hspace="10" vspace="10">](/screenshot/6.png)
+[<img src="./screenshot/7.png" width="200" hspace="10" vspace="10">](/screenshot/7.png)
 
