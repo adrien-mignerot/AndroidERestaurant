@@ -17,7 +17,7 @@ class CategoryListAdapter(private val categories: List<Dish>, private val catego
     override fun onBindViewHolder(holder: CategoryListAdapter.CategoryHolder, position: Int) {
         holder.title.text = categories[position].title
         holder.price.text = categories[position].getFormattedPrice()
-        // Image
+
         val picasso = Picasso.get()
         if (categories[position].getFirstPicture() != null) {
             picasso

@@ -53,13 +53,13 @@ class CategoryActivity : BaseActivity() {
                 displayDishes(it)
             } ?: run {
                 binding.categoryLoading.visibility = View.GONE
-                binding.categoryErrorMessage.text = "Aucun(e) ${category.toLowerCase()} proposé(e)s pour le moment"
+                binding.categoryErrorMessage.text = "${category.toLowerCase()} " + getString(R.string.notFound)
             }
         },
                 {
                     Log.d("CategoryActivity", "Erreur Volley : $it")
                     binding.categoryLoading.visibility = View.GONE
-                    binding.categoryErrorMessage.text = "Impossible de récupérer la liste des ${category.toLowerCase()}."
+                    binding.categoryErrorMessage.text = getString(R.string.cannotGetList) +" ${category.toLowerCase()}."
                 })
         Volley.newRequestQueue(this).add(stringRequest)
     }

@@ -21,8 +21,8 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //binding.registerButton.isEnabled = false
 
+        //binding.registerButton.isEnabled = false
         //onChange ou Librarie
 
         binding.registerAlreadyButton.setOnClickListener {

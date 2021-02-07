@@ -38,4 +38,16 @@
     <string name="goHomme">Retour au menu principal</string>
     <string name="our">Nos</string>
     <string name="total">Total :</string>
+    <string name="basketEmpty">Votre panier est vide...</string>
+    <string name="ok">OK</string>
+    <string name="oups">Oups !</string>
+    <string name="devise">€</string>
+    <string name="cannotGetList">Impossible de récupérer la liste des</string>
+    <string name="notFound">introuvables</string>
+    <string name="maxOrder">Vous pouvez commander au maximum</string>
+    <string name="one">Un(e)</string>
+    <string name="addToBasket">ajouté(e) au panier !</string>
+    <string name="thanks">Merci !</string>
+    <string name="orderSuccess">Votre commande est passée, venez la récupérer dans 1h.</string>
+    <string name="orderError">Une erreur est survenue lors du passage de la commande.</string>
 </resources>

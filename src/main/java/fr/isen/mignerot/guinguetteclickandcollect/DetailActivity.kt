@@ -16,6 +16,7 @@ private lateinit var binding: ActivityDetailBinding
 
 class DetailActivity : BaseActivity() {
     private var quantity = 1
+    private var orderMax = 10
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
@@ -29,7 +30,7 @@ class DetailActivity : BaseActivity() {
 
         val total = dish.getPrice().toFloat()*quantity
 
-        binding.detailButton.text = "Total ".toUpperCase() + total.toString() + " €"
+        binding.detailButton.text = getString(R.string.total).toUpperCase() + " $total " + getString(R.string.devise)
 
         dish.getAllPictures()?.let {
             binding.detailViewPager.adapter = DetailViewAdapter(this, it)
@@ -49,17 +50,17 @@ class DetailActivity : BaseActivity() {
         }
 
         binding.detailAdd.setOnClickListener {
-            if(quantity < 10){
+            if(quantity < orderMax){
                 quantity++
                 if(quantity > 1)
                     binding.detailRemove.visibility = View.VISIBLE
                 binding.detailNumber.text = quantity.toString()
             } else {
-                Toast.makeText(applicationContext, "Vous pouvez commander au maximum 10 ${dish.title}.", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, getString(R.string.maxOrder) + " $orderMax ${dish.title}.", Toast.LENGTH_LONG).show()
                 binding.detailAdd.visibility = View.GONE
             }
             val total = dish.getPrice().toFloat()*quantity
-            binding.detailButton.text = "Total ".toUpperCase() + total.toString() + " €"
+            binding.detailButton.text = getString(R.string.total).toUpperCase() + " $total " + getString(R.string.devise)
         }
 
         binding.detailRemove.setOnClickListener {
@@ -67,12 +68,12 @@ class DetailActivity : BaseActivity() {
                 quantity--
                 if(quantity == 1)
                     binding.detailRemove.visibility = View.GONE
-                if(quantity < 10)
+                if(quantity < orderMax)
                     binding.detailAdd.visibility = View.VISIBLE
                 binding.detailNumber.text = quantity.toString()
             }
             val total = dish.getPrice().toFloat()*quantity
-            binding.detailButton.text = "Total ".toUpperCase() + total.toString() + " €"
+            binding.detailButton.text = getString(R.string.total).toUpperCase() + " $total " + getString(R.string.devise)
         }
 
         binding.detailButton.setOnClickListener {
@@ -102,9 +103,9 @@ class DetailActivity : BaseActivity() {
             saveInMemory(basket, file)
         }
         if(quantity == 1)
-            Snackbar.make( view, "Un(e) ${dish.title} ajouté(e) au panier !", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make( view, getString(R.string.one) + " ${dish.title} " + getString(R.string.addToBasket), Snackbar.LENGTH_SHORT).show()
         else
-            Snackbar.make( view, "$quantity ${dish.title} ajouté(e)s au panier !", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make( view, "$quantity ${dish.title} " + getString(R.string.addToBasket), Snackbar.LENGTH_SHORT).show()
     }
 
     private fun saveInMemory(basket: Basket, file: File) {

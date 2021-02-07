@@ -30,13 +30,13 @@ open class BaseActivity: AppCompatActivity() {
                 startActivity(Intent(this, BasketActivity::class.java))
             } else {
                 val dialogBuilder = AlertDialog.Builder(this)
-                dialogBuilder.setMessage("Votre panier est vide...")
+                dialogBuilder.setMessage(getString(R.string.basketEmpty))
                         .setCancelable(false)
-                        .setPositiveButton("Ok", DialogInterface.OnClickListener {
+                        .setPositiveButton(getString(R.string.ok), DialogInterface.OnClickListener {
                             dialog, _ -> dialog.cancel()
                         })
                 val alert = dialogBuilder.create()
-                alert.setTitle("Oups !")
+                alert.setTitle(getString(R.string.oups))
                 alert.show()
             }
         }

@@ -44,10 +44,10 @@ class BasketActivity : BaseActivity() {
                 resetBasket(basket)
                 invalidateOptionsMenu()
                 val total = basket.items.sumOf { it.quantity * it.dish.getPrice().toDouble() }
-                binding.basketTotalText.text = getString(R.string.total) + " $total €"
+                binding.basketTotalText.text = getString(R.string.total) + " $total " + getString(R.string.devise)
             }
             val total = basket.items.sumOf { it.quantity * it.dish.getPrice().toDouble() }
-            binding.basketTotalText.text = getString(R.string.total) + " $total €"
+            binding.basketTotalText.text = getString(R.string.total) + " $total " + getString(R.string.devise)
             binding.basketLoading.visibility = View.GONE
             basketRecycler.layoutManager = LinearLayoutManager(this)
         }

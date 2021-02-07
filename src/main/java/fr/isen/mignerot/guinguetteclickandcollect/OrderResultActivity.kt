@@ -76,13 +76,13 @@ class OrderResultActivity : AppCompatActivity() {
                         invalidateOptionsMenu()
                     }
                     Log.i(TAG, "response code  -> $gson")
-                    binding.orderTitle.text = "Merci !"
-                    binding.orderDesc.text = "Votre commande est passée, venez la récupérer dans 1h."
+                    binding.orderTitle.text = getString(R.string.thanks)
+                    binding.orderDesc.text = getString(R.string.orderSuccess)
                 },
                 { error ->
                     Log.i(TAG, "Error $error")
-                    binding.orderTitle.text = "Oups !"
-                    binding.orderDesc.text = "Une erreur est survenue lors du passage de la commande."
+                    binding.orderTitle.text = getString(R.string.oups)
+                    binding.orderDesc.text = getString(R.string.orderError)
                 })
         queue.add(stringRequest)
     }
