@@ -1,4 +1,4 @@
-package fr.isen.mignerot.guinguetteclickandcollect
+package fr.isen.mignerot.guinguetteclickandcollect.model
 
 import com.google.gson.annotations.SerializedName
 import fr.isen.mignerot.guinguetteclickandcollect.model.ItemBasket

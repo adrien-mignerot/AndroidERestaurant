@@ -8,6 +8,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
 import fr.isen.mignerot.guinguetteclickandcollect.databinding.ActivityBasketBinding
+import fr.isen.mignerot.guinguetteclickandcollect.model.Basket
 import java.io.File
 
 private lateinit var binding: ActivityBasketBinding
@@ -20,9 +21,9 @@ class BasketActivity : BaseActivity() {
         readFile()
 
         binding.basketButton.setOnClickListener {
+            finish()
             if( getUserId() > -1) {
                 Log.i(TAG, "command item with uid ${getUserId()}")
-                finish()
                 val intent = Intent(this, OrderResultActivity::class.java)
                 startActivity(intent)
             } else {

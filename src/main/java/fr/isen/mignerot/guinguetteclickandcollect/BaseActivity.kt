@@ -26,9 +26,9 @@ open class BaseActivity: AppCompatActivity() {
         }
 
         menuView?.setOnClickListener{
-            if(quantity > 0)
+            if(quantity > 0) {
                 startActivity(Intent(this, BasketActivity::class.java))
-            else {
+            } else {
                 val dialogBuilder = AlertDialog.Builder(this)
                 dialogBuilder.setMessage("Votre panier est vide...")
                         .setCancelable(false)

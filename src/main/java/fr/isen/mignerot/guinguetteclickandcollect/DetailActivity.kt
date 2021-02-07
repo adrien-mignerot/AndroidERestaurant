@@ -7,6 +7,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.gson.GsonBuilder
 import com.squareup.picasso.Picasso
 import fr.isen.mignerot.guinguetteclickandcollect.databinding.ActivityDetailBinding
+import fr.isen.mignerot.guinguetteclickandcollect.model.Basket
 import fr.isen.mignerot.guinguetteclickandcollect.model.Dish
 import fr.isen.mignerot.guinguetteclickandcollect.model.ItemBasket
 import java.io.File
@@ -77,6 +78,11 @@ class DetailActivity : BaseActivity() {
         binding.detailButton.setOnClickListener {
                 saveInBasket(it, quantity, dish)
         }
+    }
+
+    override fun onResume() {
+        invalidateOptionsMenu()
+        super.onResume()
     }
 
     private fun saveInBasket(view: View, quantity: Int, dish: Dish) {

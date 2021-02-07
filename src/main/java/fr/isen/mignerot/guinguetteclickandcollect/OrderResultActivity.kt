@@ -10,6 +10,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import fr.isen.mignerot.guinguetteclickandcollect.databinding.ActivityOrderResultBinding
+import fr.isen.mignerot.guinguetteclickandcollect.model.Basket
 import fr.isen.mignerot.guinguetteclickandcollect.model.OrderResponse
 import org.json.JSONObject
 import java.io.File
