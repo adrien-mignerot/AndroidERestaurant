@@ -6,13 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <ImageView
+        android:id="@+id/mainOutdoorPic"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/mainStarterPic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/outdoorpic" />
+
     <TextView
         android:id="@+id/mainWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
         android:text="@string/main_welcome"
-        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,46 +38,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/entsani"
+        android:shadowColor="@color/black"
+        android:shadowDx="-2"
+        android:shadowDy="2"
+        android:shadowRadius="10"
         android:text="@string/main_title"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.40"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainToquePic" />
-
-    <Button
-        android:id="@+id/starterButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/starter_button"
-        app:layout_constraintBottom_toTopOf="@id/mainCourseButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainTitle" />
-
-    <Button
-        android:id="@+id/mainCourseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/main_course_button"
-        app:layout_constraintBottom_toBottomOf="@id/dessertButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/starterButton" />
-
-    <Button
-        android:id="@+id/dessertButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/dessert_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainCourseButton" />
 
     <ImageView
         android:id="@+id/mainToquePic"
@@ -73,7 +60,8 @@
         app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="@+id/mainTitle"
         app:layout_constraintTop_toBottomOf="@+id/mainWelcome"
-        app:srcCompat="@drawable/toque" />
+        app:srcCompat="@drawable/toque"
+        tools:srcCompat="@drawable/toque" />
 
     <ImageView
         android:id="@+id/mainHandPic"
@@ -84,6 +72,93 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/mainTitle"
         app:layout_constraintTop_toTopOf="@+id/mainTitle"
-        app:srcCompat="@drawable/hand" />
+        app:srcCompat="@drawable/hand"
+        tools:srcCompat="@drawable/hand" />
+
+    <ImageView
+        android:id="@+id/mainStarterPic"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:hapticFeedbackEnabled="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/mainCoursePic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainTitle"
+        app:srcCompat="@drawable/starter" />
+
+    <TextView
+        android:id="@+id/mainStarterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="@string/starter_button"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/mainStarterPic"
+        app:layout_constraintEnd_toEndOf="@id/mainStarterPic"
+        app:layout_constraintStart_toStartOf="@+id/mainStarterPic"
+        app:layout_constraintTop_toTopOf="@+id/mainStarterPic" />
+
+    <ImageView
+        android:id="@+id/mainCoursePic"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:hapticFeedbackEnabled="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/mainDessertPic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainStarterPic"
+        app:srcCompat="@drawable/main_course" />
+
+    <TextView
+        android:id="@+id/mainCourseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="@string/main_course_button"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/mainCoursePic"
+        app:layout_constraintEnd_toEndOf="@id/mainCoursePic"
+        app:layout_constraintStart_toStartOf="@id/mainCoursePic"
+        app:layout_constraintTop_toTopOf="@id/mainCoursePic" />
+
+    <ImageView
+        android:id="@+id/mainDessertPic"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:hapticFeedbackEnabled="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainCoursePic"
+        app:srcCompat="@drawable/dessert" />
+
+    <TextView
+        android:id="@+id/mainDessertText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="@string/dessert_button"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/mainDessertPic"
+        app:layout_constraintEnd_toEndOf="@id/mainDessertPic"
+        app:layout_constraintStart_toStartOf="@id/mainDessertPic"
+        app:layout_constraintTop_toTopOf="@id/mainDessertPic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

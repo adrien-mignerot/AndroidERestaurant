@@ -9,6 +9,7 @@
         android:id="@+id/shoppingCart"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:hapticFeedbackEnabled="true"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

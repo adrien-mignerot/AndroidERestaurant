@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="fr.isen.mignerot.androiderestaurant">
+    package="fr.isen.mignerot.guinguetteclickandcollect">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidERestaurant"
         android:usesCleartextTraffic="true">
-        <activity android:name=".OrderResultActivity"></activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".BasketActivity" />
-        <activity android:name=".DetailActivity" />
-        <activity android:name=".CategoryActivity" />
-        <activity android:name=".HomeActivity">
+        <activity android:name="fr.isen.mignerot.guinguetteclickandcollect.OrderResultActivity"></activity>
+        <activity android:name="fr.isen.mignerot.guinguetteclickandcollect.LoginActivity" />
+        <activity android:name="fr.isen.mignerot.guinguetteclickandcollect.RegisterActivity" />
+        <activity android:name="fr.isen.mignerot.guinguetteclickandcollect.BasketActivity" />
+        <activity android:name="fr.isen.mignerot.guinguetteclickandcollect.DetailActivity" />
+        <activity android:name="fr.isen.mignerot.guinguetteclickandcollect.CategoryActivity" />
+        <activity android:name="fr.isen.mignerot.guinguetteclickandcollect.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">AndroidERestaurant</string>
+    <string name="app_name">Guinguette Click &amp; Collect</string>
     <string name="main_welcome">Bienvenue chez</string>
     <string name="main_title">La Guinguette</string>
+    <string name="starter">ENTRÉES</string>
+    <string name="main_course">PLATS</string>
+    <string name="dessert">DESSERTS</string>
     <string name="starter_button">Entrées</string>
     <string name="main_course_button">Plats</string>
     <string name="dessert_button">Desserts</string>
@@ -33,4 +36,6 @@
     <string name="alreadyLoginButton">► Créer votre compte</string>
     <string name="passwordConfirm">Confirmation du mot de passe</string>
     <string name="goHomme">Retour au menu principal</string>
+    <string name="our">Nos</string>
+    <string name="total">Total :</string>
 </resources>
