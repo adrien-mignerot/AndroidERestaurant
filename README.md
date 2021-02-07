@@ -1,6 +1,6 @@
 # Guinguette Click & Collect - Android App
 
-<img src="./src/main/res/drawable/logo.png" align="left" width="100" hspace="10" vspace="10">
+<img src="./src/main/res/drawable/logo.png" align="left" width="80" hspace="10" vspace="10">
 
 Guinguette Click & Collect est une application réalisé lors du cours de développement Android à l'[ISEN Méditerranée](https://www.isen-mediterranee.fr/).  
 Contrairement à d'autres applications, Guinguette Click & Collect est gratuite et open-source.
@@ -21,11 +21,11 @@ L'application vous permet de :
 
 ## Captures d'écran
 
-[<img src="./screenshot/1.png" width="225" hspace="10" vspace="10">](/screenshot/1.png)
-[<img src="./screenshot/2.png" width="225" hspace="10" vspace="10">](/screenshot/2.png)
-[<img src="./screenshot/3.png" width="225" hspace="10" vspace="10">](/screenshot/3.png)
-[<img src="./screenshot/4.png" width="225" hspace="10" vspace="10">](/screenshot/4.png)
-[<img src="./screenshot/5.png" width="225" hspace="10" vspace="10">](/screenshot/5.png)
-[<img src="./screenshot/6.png" width="225" hspace="10" vspace="10">](/screenshot/6.png)
-[<img src="./screenshot/7.png" width="225" hspace="10" vspace="10">](/screenshot/7.png)
+[<img src="./screenshot/1.png" width="250" hspace="10" vspace="10">](/screenshot/1.png)
+[<img src="./screenshot/2.png" width="250" hspace="10" vspace="10">](/screenshot/2.png)
+[<img src="./screenshot/3.png" width="250" hspace="10" vspace="10">](/screenshot/3.png)
+[<img src="./screenshot/4.png" width="250" hspace="10" vspace="10">](/screenshot/4.png)
+[<img src="./screenshot/5.png" width="250" hspace="10" vspace="10">](/screenshot/5.png)
+[<img src="./screenshot/6.png" width="250" hspace="10" vspace="10">](/screenshot/6.png)
+[<img src="./screenshot/7.png" width="250" hspace="10" vspace="10">](/screenshot/7.png)
 
